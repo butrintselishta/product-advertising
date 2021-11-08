@@ -19,7 +19,7 @@
                 <div class="col-lg-4 col-sm-6 col-md-4 col-xs-5 col-ts-12">
                     <div class="logo">
                         <a href="index.php">
-                            <img src="assets/images/logo.png" alt="logo">
+                            <img src="{{ asset('images/logo.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
         <div class="item mobile-logo">
             <div class="logo">
                 <a href="#">
-                    <img src="assets/images/logo.png" alt="img">
+                    <img src="{{ asset('images/logo.png') }}" alt="img">
                 </a>
             </div>
         </div>

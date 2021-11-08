@@ -16,7 +16,7 @@
                         <div class="newsletter-form-wrap">
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="assets/images/logo1.png" alt="logo">
+                                    <img src="{{ asset('images/logo1.png') }}" alt="logo">
                                 </a>
                             </div>
                         </div>
