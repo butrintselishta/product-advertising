@@ -51,7 +51,22 @@
                 <div class="header-nav">
                     <div class="container-wapper">
                         <ul class='ysera-clone-mobile-menu ysera-nav main-menu' id='menu-main-menu'>
+                            @forelse ($menus as $menu)
+                                    <li class="menu-item @if (count($menu->children) > 0) menu-item-has-children @endif">
+                                        <a href="" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->al_menu_title }}</a>
 
+                                        <span class="toggle-submenu"></span>
+                                        <ul class="submenu">
+                                            @foreach ($menu->children as $child)
+                                                <li class="menu-item">
+                                                    <a href="">{{ $child->al_menu_title }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                            @empty
+
+                            @endforelse
                         </ul>
                     </div>
                 </div>
