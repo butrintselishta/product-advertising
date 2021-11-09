@@ -27,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $menus = Menu::tree();
         View::share('menus',$menus);
+        // dd(\LaravelLocalization::getCurrentLocale());
+        View::share('locale', app()->getLocale());
     }
 }

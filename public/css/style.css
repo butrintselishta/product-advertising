@@ -1466,13 +1466,13 @@ table tr:last-child td, table tr:last-child th {
 	transform: translateY(0);
 	z-index: 1001;
 }
-.ysera-dropdown .language-toggle:after {
+/* .ysera-dropdown .language-toggle:after {
 	content: "\f107";
 	font-family: 'FontAwesome';
 	display: inline-block;
 	margin-left: 5px;
 	vertical-align: top;
-}
+} */
 .header-language .ysera-submenu {
 	margin: 15px 0 0;
 	min-width: 175px;
@@ -1899,7 +1899,7 @@ table tr:last-child td, table tr:last-child th {
 	color: #fff;
 	font-weight: 700;
 	font-size: 14px;
-	
+
 	opacity: 0;
 	visibility: hidden;
 	z-index: 1001;
@@ -2771,7 +2771,7 @@ blockquote .author .desc {
 	background-position: left center;
 	background-color: #ffffff;
 	background-size: cover;
-	
+
 }
 .kt-popup-newsletter.style-1 .image-newsletter {
 	width: 38.9610%;
@@ -3538,7 +3538,7 @@ blockquote .author .desc {
 }
 .breadcrumb a {
 	color: #888888;
-	
+
 }
 .breadcrumb > .active {
 	color: #222;
@@ -4865,7 +4865,7 @@ ul.list-products {
 .cart-form .shop_table .product-quantity .quantity {
 	display: block;
 	border: 1px solid #f1f1f1;
-	
+
 	padding: 0 6px;
 	width: 75px;
 	text-align: center;
@@ -5457,7 +5457,7 @@ ul.list-products {
 	text-align: center;
 	line-height: 38px;
 	z-index: 32;
-	
+
 }
 .btn-zoom.open_qv:hover {
 	color: #ffffff;
@@ -6282,7 +6282,7 @@ ul.list-products {
 	right: -40px;
 	z-index: 33;
 	background: #ffffff;
-	
+
 	opacity: 0;
 	visibility: hidden;
 }
@@ -6628,7 +6628,7 @@ ul.list-products {
 }
 .ysera-product.style2 .product-list-owl .slick-dots .slick-active {
 	background: #666666;
-	
+
 }
 .ysera-product.style2 .product-list-owl .slick-dots li:first-child {
 	border-bottom-left-radius: 5px;
@@ -6643,7 +6643,7 @@ ul.list-products {
 	padding: 0;
 }
 .slider-item.style4 .slider-inner {
-	
+
 }
 .slider-item.style4 .slider-inner .slider-infor {
 	padding-bottom: 162px;
@@ -7919,7 +7919,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	right: -20px;
 	z-index: 33;
 	background: #ffffff;
-	
+
 	opacity: 0;
 	visibility: hidden;
 }
@@ -8373,7 +8373,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	padding-top: 0;
 	padding-bottom: 0;
 	line-height: 39px;
-	
+
 	background: transparent;
 }
 .group-pinap .pinmap-buttom:hover .popup-pinmap, .group-pinap .pinmap-buttom:hover .popup-pinmap::before {
@@ -8427,7 +8427,7 @@ body.vertical-menu-open .vertical-menu-overlay {
 	font-family: 'Roboto';
 }
 .item-banner .ysera-subtitle b {
-	font-weight:900; 
+	font-weight:900;
 	font-size:20px;
 	color:#ec3b20;
 	padding: 0 0 5px;
@@ -9886,7 +9886,7 @@ iframe {
 	/*==========home 06=========*/
 	.header.style6 {
 		padding: 30px;
-		
+
 	}
 	.header.style6 .logo {
 		padding-bottom: 0;
@@ -10141,7 +10141,7 @@ iframe {
 	/*popup newletter*/
 	.kt-popup-newsletter {
 		display: none;
-		
+
 	}
 	/*===========home 04=========*/
 	.header.style4 .header-control {
@@ -10222,7 +10222,7 @@ iframe {
 	}
 	.ysera-iconbox-wrapp.default {
 		padding: 20px 0 30px;
-		
+
 	}
 	.cart-form .shop_table tbody > tr > td {
 		padding: 10px;
@@ -11042,7 +11042,7 @@ iframe {
 .product-item.style-6 .loop-form-add-to-cart .button, .pinmap-buttom, .header-nav-wapper .vertical-wapper,
 .list-category .category-item:hover {
 	background-color: #36469e;
-	
+
 }
 .product-item .button:hover,
 input[type="text"]:focus,
@@ -11058,9 +11058,9 @@ select:focus, .sevice-box-content .sevice-button:hover, .widget_filter_size li.a
 .checkout-wrapp .group-button-payment .btn-credit-card, .payment-method-wrapp .button-control .btn-pay-now, .end-checkout .button, .btn-zoom.open_qv:hover,
 .attribute_size .list-size a.active, .attribute_size .list-size a:hover, .shopcart-description .actions .button-viewcart:hover,
 .product-item.style-6 .loop-form-add-to-cart .button {
-	
+
 	border-color: #fff !important;
-	
+
 }
 a:hover, a:focus, a:active,
 .product-item.style-2 ul li a:hover, .quantity .btn-number:hover, .header-user-form-tabs .tab-link li.active,
@@ -11073,7 +11073,7 @@ a:hover, a:focus, a:active,
 .tab-details-product .tab-link li.active a, .review_form .comment-form-review .stars a.active, .review_form .comment-form-review .stars a:hover,
 .related .slick-slider.nav-center > .slick-arrow:hover, .up-sells .slick-slider.nav-center > .slick-arrow:hover, .slider-item .button:hover, .slick-slider.nav-center > .slick-arrow:hover {
 	color: #36469e;
-	
+
 }
 .details-thumd .thumbnails_carousel .owl-item .active img {
 	border-color: #36469e;

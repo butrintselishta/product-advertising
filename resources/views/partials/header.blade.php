@@ -10,22 +10,20 @@
                 <div class="header-language">
                     <div class="ysera-language ysera-dropdown">
                         <a href="#" class="active language-toggle" data-ysera="ysera-dropdown">
-								<span>
-									{{ strtoupper(app()->getLocale()) }}
-								</span>
+                            <span>
+                                {{ __(LaravelLocalization::getCurrentLocaleName()) }}
+                            </span>
                         </a>
                         <ul class="ysera-submenu">
-                            @foreach(config('app.languages') as $langLocale => $langName)
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li class="switcher-option">
-                                    <a href="{{ $langLocale }}/{{ url()->current() }}">
+                                    <a rel="alternate" hreflang="{{ $localeCode }}"  href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                         <span>
-                                            {{ strtoupper($langLocale) }} ({{ $langName }})
+                                            {{ __($properties['native']) }}
                                         </span>
                                     </a>
                                 </li>
-                                {{-- <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a> --}}
                             @endforeach
-
                         </ul>
                     </div>
                 </div>
@@ -91,13 +89,13 @@
                         <ul class='ysera-clone-mobile-menu ysera-nav main-menu' id='menu-main-menu'>
                             @forelse ($menus as $menu)
                                     <li class="menu-item @if (count($menu->childrens) > 0) menu-item-has-children @endif">
-                                        <a href="{{ route($menu->route_name) }}" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->al_menu_title }}</a>
+                                        <a href="{{ route($menu->route_name) }}" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->{(\LaravelLocalization::getCurrentLocale())."_menu_title"} }}</a>
 
                                         <span class="toggle-submenu"></span>
                                         <ul class="submenu">
                                             @foreach ($menu->childrens as $child)
                                                 <li class="menu-item">
-                                                    <a href="">{{ $child->al_menu_title }}</a>
+                                                    <a href="">{{ $child->{(\LaravelLocalization::getCurrentLocale())."_menu_title"} }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -143,6 +141,22 @@
                 </div>
             </div>
         </div>
+        <div class="item mobile-settings-box has-sub">
+            <a href="#">
+						<span class="icon">
+							<i class="fa fa-cog" aria-hidden="true"></i>
+						</span>
+            </a>
+            <div class="block-sub p-2">
+                <div class="block-sub-item text-center">
+                    <select style="border:0;" id="languages" onchange="window.location = this.value">
+                        {{-- @foreach(config('app.languages') as $langLocale => $langName)
+                            <option value="{{ $langLocale }}" @if($langLocale == app()->getLocale()) selected @endif>{{ $langName }}</option>
+                        @endforeach --}}
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="item menu-bar">
             <a class="mobile-navigation  menu-toggle" href="#">
                 <span></span>
@@ -152,3 +166,12 @@
         </div>
     </div>
 </div>
+
+@section('custom-scripts')
+    {{-- <script>
+        $(document).on('change','#languages', function(){
+            var val = this.value();
+            window.location.href = {{ route("lang",}} + val + {{ ) }}
+        })
+    </script> --}}
+@endsection

@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     app()->setLocale('al');
 //     return view('index');
 // });
+// Route::post('lang/{locale}', [HomeController::class, 'lang'])->name('lang');
 
-
-Route::prefix('{locale?}')->group(function() {
+Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
     Auth::routes();
 
     Route::get('/', function () {

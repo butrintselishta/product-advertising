@@ -19,3 +19,5 @@
 <script src="{{  asset('js/frontend-plugin.js') }}"></script>
 
 <link rel="stylesheet" href="{{  asset('fonts/font-awesome/all.min.js') }}">
+
+@yield('custom-scripts')
