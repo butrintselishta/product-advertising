@@ -1,4 +1,42 @@
 <header class="header style2">
+     <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="header-message">
+                    Welcome to our online store!
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="header-language">
+                    <div class="ysera-language ysera-dropdown">
+                        <a href="#" class="active language-toggle" data-ysera="ysera-dropdown">
+								<span>
+									{{ strtoupper(app()->getLocale()) }}
+								</span>
+                        </a>
+                        <ul class="ysera-submenu">
+                            @foreach(config('app.languages') as $langLocale => $langName)
+                                <li class="switcher-option">
+                                    <a href="{{ $langLocale }}/{{ url()->current() }}">
+                                        <span>
+                                            {{ strtoupper($langLocale) }} ({{ $langName }})
+                                        </span>
+                                    </a>
+                                </li>
+                                {{-- <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a> --}}
+                            @endforeach
+
+                        </ul>
+                    </div>
+                </div>
+                <ul class="header-user-links">
+                    <li>
+                        <a href="login.html">Login or Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="main-header">
             <div class="row">
@@ -7,7 +45,7 @@
                         <form method="get" action="kerko.php" class="form-search">
                             <div class="form-content">
                                 <div class="inner">
-                                    <input type="text" class="input" name="term" value="" required>
+                                    <input type="text" class="input" name="term" value="{{ __("Pershendetje") }}" required>
                                     <button class="btn-search" type="submit">
                                         <span class="icon-search"></span>
                                     </button>
@@ -53,7 +91,7 @@
                         <ul class='ysera-clone-mobile-menu ysera-nav main-menu' id='menu-main-menu'>
                             @forelse ($menus as $menu)
                                     <li class="menu-item @if (count($menu->children) > 0) menu-item-has-children @endif">
-                                        <a href="" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->al_menu_title }}</a>
+                                        <a href="{{ route($menu->route_name) }}" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->al_menu_title }}</a>
 
                                         <span class="toggle-submenu"></span>
                                         <ul class="submenu">

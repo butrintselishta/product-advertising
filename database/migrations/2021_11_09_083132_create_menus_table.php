@@ -17,6 +17,7 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->string('al_menu_title', 255)->index();
             $table->string('en_menu_title', 255)->index();
+            $table->string('route_name', 255);
             $table->integer('parent_id')->default(0);
             $table->string('sort_order')->default(0);
             $table->string('slug', 255);

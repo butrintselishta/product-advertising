@@ -14,11 +14,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/', function () {
+//     app()->setLocale('al');
+//     return view('index');
+// });
 
-Route::get('/', function () {
-    return view('index');
+
+Route::prefix('{locale?}')->group(function() {
+    Auth::routes();
+
+    Route::get('/', function () {
+        return view('index');
+    })->name('index');
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/products', [HomeController::class, 'products'])->name('products');
 });
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->middleware(['auth','verified'])->name('home');
