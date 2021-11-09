@@ -90,12 +90,12 @@
                     <div class="container-wapper">
                         <ul class='ysera-clone-mobile-menu ysera-nav main-menu' id='menu-main-menu'>
                             @forelse ($menus as $menu)
-                                    <li class="menu-item @if (count($menu->children) > 0) menu-item-has-children @endif">
+                                    <li class="menu-item @if (count($menu->childrens) > 0) menu-item-has-children @endif">
                                         <a href="{{ route($menu->route_name) }}" class="ysera-menu-item-title" title="{{ $menu->al_menu_title }}">{{ $menu->al_menu_title }}</a>
 
                                         <span class="toggle-submenu"></span>
                                         <ul class="submenu">
-                                            @foreach ($menu->children as $child)
+                                            @foreach ($menu->childrens as $child)
                                                 <li class="menu-item">
                                                     <a href="">{{ $child->al_menu_title }}</a>
                                                 </li>
@@ -103,7 +103,9 @@
                                         </ul>
                                     </li>
                             @empty
-
+                                <li class="menu-item">
+                                    <a> {{ __("Nuk u gjend asnjë menu") }} </a>
+                                </li>
                             @endforelse
                         </ul>
                     </div>
