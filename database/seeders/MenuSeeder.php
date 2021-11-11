@@ -23,7 +23,7 @@ class MenuSeeder extends Seeder
             ['sq_menu_title' => 'Lea','en_menu_title' => 'Lea','route_name' => "products", 'parent_id' => 2, 'sort_order' => 5, 'slug' => 'lea'],
             ['sq_menu_title' => 'T94','en_menu_title' => 'T94','route_name' => "products", 'parent_id' => 2, 'sort_order' => 6, 'slug' => 't94'],
             ['sq_menu_title' => 'Të tjera','en_menu_title' => 'Others','route_name' => "products", 'parent_id' => 2, 'sort_order' => 7, 'slug' => 'të-tjera'],
-            ['sq_menu_title' => 'Kontakti','en_menu_title' => 'Contact','route_name' => "home", 'parent_id' => 0, 'sort_order' => 8, 'slug' => 'kontakti'],
+            ['sq_menu_title' => 'Kontakti','en_menu_title' => 'Contact','route_name' => "contact", 'parent_id' => 0, 'sort_order' => 8, 'slug' => 'kontakti'],
         ];
         foreach ($menus as $menu) {
            Menu::Create($menu);

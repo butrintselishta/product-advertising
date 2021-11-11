@@ -6438,12 +6438,12 @@ ul.list-products {
 }
 .top-bar .ysera-language .language-toggle {
 	line-height: 48px;
-	padding-right: 13px;
+	padding: 0 13px;
 }
 .top-bar .header-language .ysera-submenu {
 	margin-top: 0;
 }
-.top-bar .header-language .ysera-language::after {
+.top-bar .header-language .ysera-language::after,.ysera-language::before  {
 	content: '|';
 }
 .top-bar .header-user-links a {

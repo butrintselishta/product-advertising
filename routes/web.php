@@ -19,14 +19,25 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 // Route::post('lang/{locale}', [HomeController::class, 'lang'])->name('lang');
-
-Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
     Auth::routes();
 
-    Route::get('/', function () {
-        return view('index');
-    })->name('index');
+    Route::get('/', [HomeController::class, 'index'])->name('index');
 
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/products', [HomeController::class, 'products'])->name('products');
+    /* PRODUCTS */
+    Route::prefix('produktet')->group(function () {
+        Route::get('/{menu?}/{product?}', [HomeController::class, 'products'])->name('products');
+    });
+
+    /* CONTACT */
+    Route::prefix('kontakti')->group(function () {
+        Route::get('/', [HomeController::class, 'contact'])->name('contact');
+    });
+
+    Route::put('/store', [HomeController::class, 'store'])->name('storemedia');
+    Route::get('/get', [HomeController::class, 'get'])->name('get');
 });
