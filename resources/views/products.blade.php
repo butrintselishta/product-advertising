@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="product-thumb">
                                         <div class="thumb-inner">
-                                            <a href="">
+                                            <a href="{{ route($product->route_name, [$product->menu->slug, $product->slug]) }}">
                                                 @if ($product->getMedia(strtolower($product->menu->sq_menu_title))->isNotEmpty())
                                                     <img src="{{ $product->getFirstMediaUrl(strtolower($product->menu->sq_menu_title),'thumb') }}">
                                                 @else
@@ -97,7 +97,7 @@
                                     </div>
                                     <div class="product-info">
                                         <h5 class="product-name product_title">
-                                            <a href="{{ route($product->menu->route_name, [$product->menu->slug, $product->slug]) }}">{{ $product->{(\LaravelLocalization::getCurrentLocale())."_title"} }}</a>
+                                            <a href="{{ route($product->route_name, [$product->menu->slug, $product->slug]) }}">{{ $product->{(\LaravelLocalization::getCurrentLocale())."_title"} }}</a>
                                         </h5>
                                         <div class="price">
                                             @if ($product->new_price !== null)
@@ -116,8 +116,8 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-12">
-                {{-- pagiantion --}}
+            <div class="d-flex justify-content-center">
+                {!! $products->links() !!}
             </div>
 		</div>
 	</div>

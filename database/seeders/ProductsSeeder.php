@@ -25,6 +25,7 @@ class ProductsSeeder extends Seeder
                 'en_color' => 'White with silver',
                 'sq_description' => '<ul style=\"margin-left:30px\"><li>6 copë filxhana </li></ul>',
                 'en_description' => '<ul style=\"margin-left:30px\"><li>6 cups </li></ul>',
+                'route_name' => "singleProduct",
                 'menu_id' => 3
             ],
             [
@@ -35,6 +36,7 @@ class ProductsSeeder extends Seeder
                 'new_price' => null,
                 'sq_description' => '<ul style=\"margin-left:30px\"><li>6 pjata<br></li></ul>',
                 'en_description' => '<ul style=\"margin-left:30px\"><li>6 f<br></li></ul>',
+                'route_name' => "singleProduct",
                 'menu_id' => 6
             ],
             [
@@ -45,6 +47,7 @@ class ProductsSeeder extends Seeder
                 'new_price' => 34.90,
                 'sq_description' => '<ul><li>6 copë filxhana </li></ul>',
                 'en_description' => '<ul><li>6 cups </li></ul>',
+                'route_name' => "singleProduct",
                 'menu_id' => 4
             ],
         ];

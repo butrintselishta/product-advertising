@@ -31,9 +31,9 @@ Route::group(
 
     /* PRODUCTS */
     Route::prefix('produktet')->group(function () {
-        Route::get('/{menu:slug?}/{product:slug?}', [ProductController::class, 'byBrand'])->name('products');
-        // Route::get('/{menu:slug}', [ProductController::class, 'byBrand'])->name('productsByBrand');
-        // Route::get('/{menu:slug}/{product:slug}', [ProductController::class, 'findProduct']);
+        Route::get('/{menu:slug?}', [ProductController::class, 'byBrand'])->name('products');
+        Route::get('/{menu:slug}/{product:slug}', [ProductController::class, 'findProduct'])->name('singleProduct');
+        // Route::get('/{menu:slug}/', [ProductController::class, 'findProduct']);
     });
 
     /* CONTACT */

@@ -21,15 +21,15 @@ class ProductController extends Controller
         //
     }
 
-    public function byBrand($menu = null, $product = null)
+    public function byBrand($menu = null)
     {
-        $products = $this->product->findByBrand($menu,$product);
+        $products = $this->product->findByBrand($menu);
         return view('products', compact('products'));
     }
 
     public function findProduct(Menu $menu,Product $product)
     {
         $product = $this->product->findProduct($menu,$product);
-        return view('single-product', ['latestUpdatedProducts' => $product[0], 'products'=>$product[1]]);
+        return view('single-product', ['latestUpdatedProducts' => $product[0], 'product'=>$product[1]]);
     }
 }

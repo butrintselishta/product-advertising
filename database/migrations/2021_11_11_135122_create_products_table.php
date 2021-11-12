@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('en_color', 100)->nullable();
             $table->string('sq_description', 3000);
             $table->string('en_description', 3000);
+            $table->string('route_name');
             $table->bigInteger('menu_id');
             $table->timestamps();
         });

@@ -11,20 +11,21 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function all()
     {
-        return Product::inRandomOrder()->get();
+        // return Product::inRandomOrder()->get();
     }
 
     public function findByBrand($menu)
     {
-        if($menu !== null){
+        if ($menu !== null) {
             $brand = Menu::where('slug', $menu)
-                ->with('products')
-                ->orderbydesc('updated_at')
                 ->firstOrFail();
+            $product = Product::where('menu_id', $brand->id)
+                ->orderbydesc('updated_at')
+                ->paginate(1);
 
-            return $brand->products;
+            return $product;
         }
-        return Product::inRandomOrder()->get();
+        return Product::inRandomOrder()->paginate(1);
     }
 
     public function findProduct(Menu $menu, Product $product)
@@ -33,6 +34,6 @@ class ProductRepository implements ProductRepositoryInterface
             ->orderBy('updated_at')
             ->get();
 
-        return [$latestUpdatedProducts,$product];
+        return [$latestUpdatedProducts, $product];
     }
 }
