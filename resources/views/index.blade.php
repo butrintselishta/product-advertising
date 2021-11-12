@@ -1,12 +1,12 @@
 @extends('partials.master')
 
 @section('content')
-{{-- <form method="post" action="{{ route("storemedia") }}" enctype="multipart/form-data">
+<form method="post" action="{{ route("storemedia") }}" enctype="multipart/form-data">
     @csrf
     @method("put")
     <input type="file" name="foto">
     <input type="submit">
-</form> --}}
+</form>
 <div class="">
     <div class="fullwidth-template">
         <div class="home-slider fullwidth rows-space-60">

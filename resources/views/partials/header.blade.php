@@ -95,7 +95,7 @@
                                         <ul class="submenu">
                                             @foreach ($menu->childrens as $child)
                                                 <li class="menu-item">
-                                                    <a href="{{ route($child->parent->route_name, $child->slug) }}">{{ $child->{(\LaravelLocalization::getCurrentLocale())."_menu_title"} }}</a>
+                                                    <a href="{{ route($child->route_name, $child->slug) }}">{{ $child->{(\LaravelLocalization::getCurrentLocale())."_menu_title"} }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>

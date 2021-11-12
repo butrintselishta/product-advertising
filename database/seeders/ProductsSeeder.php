@@ -45,7 +45,7 @@ class ProductsSeeder extends Seeder
                 'new_price' => 34.90,
                 'sq_description' => '<ul><li>6 copë filxhana </li></ul>',
                 'en_description' => '<ul><li>6 cups </li></ul>',
-                'menu_id' => 6
+                'menu_id' => 4
             ],
         ];
         foreach ($products as $product) {

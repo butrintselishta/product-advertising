@@ -26,12 +26,12 @@ class HomeController extends Controller
         return $this->homeRepository->show();
     }
 
-    public function store(Request $request){
-        $prod = Product::find(3);
-        $prod->addMedia($request->foto)
-            ->toMediaCollection('loss');
+    // public function store(Request $request){
+    //     $prod = Product::find(3);
+    //     $prod->addMedia($request->foto)
+    //         ->toMediaCollection('loos');
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
 }

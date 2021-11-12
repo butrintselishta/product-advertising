@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,9 @@ Route::group(
 
     /* PRODUCTS */
     Route::prefix('produktet')->group(function () {
-        Route::get('/{menu?}/{product?}', [HomeController::class, 'products'])->name('products');
+        Route::get('/{menu:slug?}/{product:slug?}', [ProductController::class, 'byBrand'])->name('products');
+        // Route::get('/{menu:slug}', [ProductController::class, 'byBrand'])->name('productsByBrand');
+        // Route::get('/{menu:slug}/{product:slug}', [ProductController::class, 'findProduct']);
     });
 
     /* CONTACT */

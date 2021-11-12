@@ -19,4 +19,8 @@ class Menu extends Model
     {
         return static::with(implode('.', array_fill(0, 100, 'childrens')))->where('parent_id', '=', '0')->orderBy('sort_order')->get();
     }
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }
