@@ -39,7 +39,7 @@
                                         @endif
                                     </span>
                                 </div>
-                                <a href="{{ route($product->menu->route_name, [$product->menu->slug,$product->slug]) }}" class="button btn-shop-the-look bgroud-style">shiko produktin</a>
+                                <a href="{{ route($product->route_name, [$product->menu->slug,$product->slug]) }}" class="button btn-shop-the-look bgroud-style">shiko produktin</a>
                             </div>
                         </div>
                     </div>

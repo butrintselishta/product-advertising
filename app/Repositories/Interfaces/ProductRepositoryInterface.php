@@ -8,5 +8,5 @@ use App\Models\Product;
 interface ProductRepositoryInterface{
     public function all();
     public function findByBrand($menu);
-    public function findProduct(Menu $menu,Product $slug);
+    public function findProduct($menu,$slug);
 }

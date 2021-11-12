@@ -17,23 +17,24 @@ class ProductRepository implements ProductRepositoryInterface
     public function findByBrand($menu)
     {
         if ($menu !== null) {
-            $brand = Menu::where('slug', $menu)
-                ->firstOrFail();
-            $product = Product::where('menu_id', $brand->id)
-                ->orderbydesc('updated_at')
-                ->paginate(1);
+            $products = Product::whereHas('menu', function ($query) use ($menu) {
+                $query->where('id', $menu->id);
+            })->paginate(12);
 
-            return $product;
+            return $products;
         }
-        return Product::inRandomOrder()->paginate(1);
+        return Product::inRandomOrder()->paginate(12);
     }
 
-    public function findProduct(Menu $menu, Product $product)
+    public function findProduct($menu, $product)
     {
-        $latestUpdatedProducts = Product::where('menu_id', $menu->id)
-            ->orderBy('updated_at')
-            ->get();
-
+        $latestUpdatedProducts = Product::
+                                        whereHas('menu', function ($query) use ($menu) {
+                                            $query->where('id', $menu->id);
+                                        })
+                                        ->orderBy('updated_at')
+                                        ->take(3)
+                                        ->get();
         return [$latestUpdatedProducts, $product];
     }
 }

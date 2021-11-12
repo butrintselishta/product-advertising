@@ -21,7 +21,7 @@ class ProductController extends Controller
         //
     }
 
-    public function byBrand($menu = null)
+    public function byBrand(Menu $menu = null)
     {
         $products = $this->product->findByBrand($menu);
         return view('products', compact('products'));

@@ -1,7 +1,6 @@
 @extends('partials.master')
 
 @section('content')
-
 <div class="main-content main-content-product no-sidebar">
 	<div class="container">
 		<div class="row">
@@ -9,12 +8,10 @@
 				<div class="breadcrumb-trail breadcrumbs">
 					<ul class="trail-items breadcrumb">
 						<li class="trail-item trail-begin">
-							<a href="index.php">AS & HOOT</a>
+							<a href="index.php">{{ config('app.name') }} </a>
 						</li>
 						<li class="trail-item trail-begin">
-							<a href="produktet.php">Produktet</a>
-						</li>
-						<li class="trail-item trail-end active"><!--  -->
+							<a href="">Produktet</a>
 						</li>
 					</ul>
 				</div>
@@ -111,7 +108,8 @@
                                 </div>
                             </li>
                         @empty
-
+                            <hr>
+                            <p class="text-danger">{{ __("Nuk ka produkte!") }}</p>
                         @endforelse
 					</ul>
 				</div>
